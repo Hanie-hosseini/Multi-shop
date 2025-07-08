@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@theme {
+    --color-prim: #daa14c;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
