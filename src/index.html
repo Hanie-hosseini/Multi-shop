@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>A R O Shop</title>
     <link rel="stylesheet" href="./output.css">
+    <script src="./main.js" defer></script>
 </head>
+
 <body>
-    
+
+    <!--bottom navigation bar-->
+    <div class="fixed bottom-0 left-0 w-full flex border-t border-gray-300 bg-white md:hidden">
+        <div class="flex-1 flex flex-col items-center justify-center py-1 group">
+            <img src="../asset/images/icon/search-black.svg" alt="icon-search" width="20px"
+                class="transition-transform duration-200 group-hover:-translate-y-1">
+            <h3 class="text-sm mt-1">Search</h3>
+        </div>
+        <div class="flex-1 flex flex-col items-center justify-center py-1 border-l border-gray-300 group">
+            <img src="../asset/images/icon/user.svg" alt="icon-user" width="20px"
+                class="transition-transform duration-200 group-hover:-translate-y-1">
+            <h3 class="text-sm mt-1">Account</h3>
+        </div>
+        <div class="flex-1 flex flex-col items-center justify-center py-1 border-l border-gray-300 group">
+            <img src="../asset/images/icon/shopping-cart-round.svg" alt="icon-cart" width="20px"
+                class="transition-transform duration-200 group-hover:-translate-y-1">
+            <h3 class="text-sm mt-1">Cart</h3>
+        </div>
+    </div>
 </body>
 </html>
