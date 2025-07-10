@@ -157,3 +157,68 @@ function renderjewelrysection(items) {
     }).join("");
     container.innerHTML = template;
 }
+
+fetch("https://fakestoreapi.com/products/category/men's%20clothing")
+    .then(res => res.json())
+    .then(json => rendermensection(json))
+    .catch(err => alert(err))
+    function rendermensection(items) {
+    const container = document.getElementById("men-container")
+    const template = items.map(item => {
+        return `
+            <div class="group ">
+                <div
+                    class="relative bg-white overflow-hidden shadow-lg aspect-[3/4] rounded-md transition-[border-radius] duration-1000 ease-in-out rounded-t-[200px]">
+                    <img src="${item.image}" alt="Men's Clothing"
+                        class="w-full h-full object-contain transition-[filter,border-radius] duration-1000 ease-in-out rounded-t-[200px]" />
+
+                    <div
+                        class="absolute inset-0 pointer-events-none transition-[border-radius] duration-1000 ease-in-out rounded-md rounded-t-[200px]">
+                    </div>
+
+                   
+                    <div class="absolute inset-0 flex gap-4 items-end justify-center pb-4">
+
+                        <!-- icon1-->
+                        <div class="relative group/icon">
+                            <span
+                                class="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover/icon:opacity-100 transition-all duration-300 text-nowrap">
+                                Add to Cart
+                            </span>
+                            <img class="p-1.5 bg-prim rounded-4xl cursor-pointer opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100"
+                                src="../asset/images/icon/shopping-basket-blank-svgrepo-com.svg" alt="shoppping"
+                                width="40px">
+                        </div>
+
+                        <!-- icon2-->
+                        <div class="relative group/icon">
+                            <span
+                                class="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover/icon:opacity-100 transition-all duration-300 text-nowrap">
+                                Add to wishlist
+                            </span>
+                            <img class="p-1.5 bg-prim rounded-4xl cursor-pointer opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-300"
+                                src="../asset/images/icon/like-black.svg" alt="like" width="40px">
+                        </div>
+
+                        <!-- icon3-->
+                        <div class="relative group/icon">
+                            <span
+                                class="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover/icon:opacity-100 transition-all duration-300 text-nowrap">
+                                Quick View
+                            </span>
+                            <img class="p-1.5 bg-prim rounded-4xl cursor-pointer opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-500"
+                                src="../asset/images/icon/eye-open-svgrepo-com.svg" alt="visit" width="40px">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between md:py-5">
+                    <span class="text-prim">Men's Clothing</span>
+                    <span class="font-bold">$ ${item.price}</span>
+                    <h3 class="py-2">${item.title}</h3>
+                   
+               </div>
+            </div>
+    `
+    }).join("");
+    container.innerHTML = template;
+}
