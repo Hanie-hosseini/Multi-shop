@@ -2,6 +2,7 @@
 
 @theme {
     --color-prim: #daa14c;
+    --color-logo: #af974f;
 }
 
 @keyframes float {
