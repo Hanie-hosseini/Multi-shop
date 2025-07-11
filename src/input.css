@@ -20,3 +20,40 @@
 .animate-float {
     animation: float 3s ease-in-out infinite;
 }
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+  .animate-spin-reverse {
+    animation: spin-reverse 2s linear infinite;
+  }
+  @keyframes spin-reverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+  }
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 4s linear infinite;
+  }
+  .animate-spin-reverse {
+    animation: spin-reverse 2.5s linear infinite;
+  }
+  @keyframes spin-reverse {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+}
